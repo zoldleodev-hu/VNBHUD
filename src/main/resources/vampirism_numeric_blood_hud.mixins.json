@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "hu.zoldleo.vampirism_numeric_blood_hud.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "vampirism_numeric_blood_hud.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+    "client.VampirismHudOverlayMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
