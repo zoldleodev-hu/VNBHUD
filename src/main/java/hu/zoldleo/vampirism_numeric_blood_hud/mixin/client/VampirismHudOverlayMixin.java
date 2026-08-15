@@ -6,7 +6,7 @@ import de.teamlapen.vampirism.api.entity.player.vampire.IVampirePlayer;
 import de.teamlapen.vampirism.client.gui.overlay.VampirismHUDOverlay;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.Entity;
-import net.neoforged.neoforge.client.event.RenderGuiOverlayEvent;
+import net.neoforged.neoforge.client.event.RenderGuiLayerEvent;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -21,7 +21,7 @@ public class VampirismHudOverlayMixin {
     private Minecraft mc;
 
     @Inject(method = "lambda$onRenderCrosshair$1", at = @At(value = "INVOKE", target = "Lde/teamlapen/vampirism/client/gui/overlay/VampirismHUDOverlay;renderBloodFangs(Lnet/minecraft/client/gui/GuiGraphics;IIFI)V"))
-    private void renderNumeric(Entity entity, RenderGuiOverlayEvent.Pre event, IBiteableEntity biteable, CallbackInfo ci) {
+    private void renderNumeric(Entity entity, RenderGuiLayerEvent.Pre event, IBiteableEntity biteable, CallbackInfo ci) {
         int blood = -1;
         int maxBlood = -1;
         if (biteable instanceof IExtendedCreatureVampirism creature) {
